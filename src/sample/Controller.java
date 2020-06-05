@@ -41,8 +41,12 @@ public class Controller {
     @FXML
     public void handleClick() {
         FileChooser chooser = new FileChooser();
-//        DirectoryChooser chooser = new DirectoryChooser();
-//        File file = chooser.showDialog(gridPane.getScene().getWindow());
+        chooser.setTitle("Save Application File");
+        chooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text", "*.txt"),
+                new FileChooser.ExtensionFilter("PDF", "*.pdf")
+        );
+
         File file = chooser.showSaveDialog(gridPane.getScene().getWindow());
         if (file != null) {
             System.out.println(file.getPath());
