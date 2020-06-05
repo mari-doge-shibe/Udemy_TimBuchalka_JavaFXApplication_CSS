@@ -9,9 +9,21 @@ public class Controller {
     private Label label;
 
     public void initialize() {
+
+    }
+
+    @FXML
+    public void handleMouseEnter() {
         label.setScaleX(2.0);
         label.setScaleY(2.0);
     }
+
+    @FXML
+    public void handleMouseExit() {
+        label.setScaleX(1.0);
+        label.setScaleY(1.0);
+    }
+
 
 
 }
