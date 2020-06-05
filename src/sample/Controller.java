@@ -41,13 +41,14 @@ public class Controller {
     @FXML
     public void handleClick() {
         FileChooser chooser = new FileChooser();
-        chooser.setTitle("Save Application File");
+//        chooser.setTitle("Save Application File");
         chooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Text", "*.txt"),
-                new FileChooser.ExtensionFilter("PDF", "*.pdf")
+                new FileChooser.ExtensionFilter("Zip", "*.zip"),
+                new FileChooser.ExtensionFilter("PDF", "*.pdf"),
+                new FileChooser.ExtensionFilter("All File", "*.*")
         );
 
-        File file = chooser.showSaveDialog(gridPane.getScene().getWindow());
+        File file = chooser.showOpenDialog(gridPane.getScene().getWindow());
         if (file != null) {
             System.out.println(file.getPath());
         } else {
